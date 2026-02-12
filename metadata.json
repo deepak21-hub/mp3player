@@ -1,0 +1,5 @@
+{
+  "name": "CyberY2K OS Player",
+  "description": "A web-based music player simulating a Cyber-Y2K operating system interface, featuring a draggable window, rotating CD mechanism, and Spotify integration.",
+  "requestFramePermissions": []
+}
