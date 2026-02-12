@@ -3,14 +3,15 @@ import React from 'react';
 interface CDPlayerProps {
   imageUrl?: string;
   isPlaying: boolean;
+  className?: string;
 }
 
-const CDPlayer: React.FC<CDPlayerProps> = ({ imageUrl, isPlaying }) => {
+const CDPlayer: React.FC<CDPlayerProps> = ({ imageUrl, isPlaying, className = "w-48 h-48 sm:w-64 sm:h-64" }) => {
   // Fallback image if no track is playing
   const artUrl = imageUrl || 'https://picsum.photos/300/300';
 
   return (
-    <div className="relative w-64 h-64 flex-shrink-0 mx-auto my-4 perspective-[1000px]">
+    <div className={`relative flex-shrink-0 mx-auto perspective-[1000px] aspect-square ${className}`}>
       {/* Outer Case / Drive Tray aesthetics could go here, but we focus on the disc */}
       
       {/* The Disc Container */}
@@ -31,8 +32,8 @@ const CDPlayer: React.FC<CDPlayerProps> = ({ imageUrl, isPlaying }) => {
         />
 
         {/* Center Hole */}
-        <div className="absolute top-1/2 left-1/2 w-16 h-16 bg-gray-900 rounded-full transform -translate-x-1/2 -translate-y-1/2 border-4 border-gray-400 flex items-center justify-center z-10">
-           <div className="w-14 h-14 bg-black rounded-full border border-gray-600"></div>
+        <div className="absolute top-1/2 left-1/2 w-[25%] h-[25%] bg-gray-900 rounded-full transform -translate-x-1/2 -translate-y-1/2 border-4 border-gray-400 flex items-center justify-center z-10">
+           <div className="w-[85%] h-[85%] bg-black rounded-full border border-gray-600"></div>
         </div>
 
         {/* Glossy Overlay (Plastic Shine) */}
